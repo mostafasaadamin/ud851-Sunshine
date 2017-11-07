@@ -17,16 +17,35 @@ package com.example.android.sunshine;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
+import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
-
+TextView mWeather;
     // TODO (1) Create a field to store the weather display TextView
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forecast);
-
+     mWeather= (TextView) findViewById(R.id.tv_weather_data);
+        String[] WeatherData = {
+                "Today, May 12 - Clear - 3°C / 54°C",
+                "Tomorrow - Cloudy - 43°C / 3°C",
+                "Thursday - Rainy- 3°C / 3°C",
+                "Friday - Thunderstorms - 21°C / 9°C",
+                "Saturday - Thunderstorms - 54°C / 7°C",
+                "Sunday - Rainy - 16°C /58°C",
+                "Monday - Partly Cloudy - 15°C / 10°C",
+                "Tue, May 24 - Meatballs - 16°C / 18°C",
+                "Wed, May 25 - Cloudy - 19°C / 15°C",
+                "Thu, May 26 - Stormy - 30°C / 11°C",
+                "Fri, May 27 - Hurricane - 21°C / 9°C",
+                "Sat, May 28 - Meteors - 16°C / 7°C",
+                "Sun, May 29 - Apocalypse - 16°C / 8°C",
+                "Mon, May 30 - Post Apocalypse - 15°C / 10°C",
+        };
+        for (String WeatherDay :WeatherData) {
+            mWeather.append(WeatherDay + "\n\n\n");
+        }
         // TODO (2) Use findViewById to get a reference to the weather display TextView
 
         // TODO (3) Create an array of Strings that contain fake weather data
